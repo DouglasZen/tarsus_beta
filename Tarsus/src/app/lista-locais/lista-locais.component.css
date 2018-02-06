@@ -1,0 +1,82 @@
+.local{
+	background-color:#666;
+	border-radius: 10px;
+	background: rgba(122, 130, 136, 0.4);
+	padding: 20px;
+}
+header{
+	background-image: url(../../assets/img/steven-wang-416400.jpg);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+h3{
+	text-align: center;
+}
+form{
+	width: 100%;
+	margin: 0 auto;
+}
+#buscar{
+	margin-top: 30px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+.h-100{
+	padding-top: 60px;
+}
+.busca{
+	margin-bottom: 10px;
+}
+.magnifying-glass{
+	background-color: #fff;
+}
+.scroll{
+	opacity: 0.90;
+}
+@media (min-width: 1250px){
+	.h-100{
+		padding-top: 0px;
+	}
+	form {
+	    width: 500px;
+	}
+	header{
+		height: 100vh;
+	}
+	.navbar-toggleable-md .navbar-toggler{
+		display: block;
+		position: fixed;
+	}
+	div.scroll {
+		overflow: auto;
+		background-color: #ccc;
+		max-height: 30em;
+	}
+}
+
+
+
+
+
+

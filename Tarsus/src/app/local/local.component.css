@@ -1,0 +1,33 @@
+.local{
+	background-color:#666;
+	border-radius: 10px;
+	background: rgba(122, 130, 136, 0.4);
+	padding: 20px;
+}
+header{
+	background-image: url(../../assets/img/steven-wang-416400.jpg);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+	height: 100vh;
+}
+h3{
+	text-align: center;
+}
+form{
+	width: 100%;
+	margin: 0 auto;
+}
+#buscar{
+	margin-top: 30px;
+}
+@media (min-width: 1250px){
+	form{
+		width: 500px;
+	}
+	.navbar-toggleable-md .navbar-toggler{
+		display: block;
+		position: fixed;
+	}
+}

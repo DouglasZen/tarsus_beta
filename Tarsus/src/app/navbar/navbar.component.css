@@ -1,0 +1,28 @@
+#mainNav {
+	background-color: #38B0DE;
+}
+.container {
+    margin-left: inherit;
+    margin-right: inherit;
+    position: static;
+}
+.nav-item{
+	margin-top: 10px;
+}
+form.ml-auto{
+	margin-bottom: 20px;
+}
+
+@media (min-width: 576px){
+	.container {
+	    margin-left: auto;
+	    margin-right: auto;
+	    position: relative;
+	}
+	.nav-item{
+		margin-right: 10px;
+	}
+	#mainNav {
+		background: rgba(56,176,222, 0.7);
+	}
+}

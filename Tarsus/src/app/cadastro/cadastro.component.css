@@ -1,0 +1,42 @@
+header.masthead .masthead-img {
+    max-width: 200px;
+    max-height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#cadastro{
+	background-color:#666;
+	border-radius: 10px;
+	background: rgba(122, 130, 136, 0.4);
+	padding: 20px;
+}
+p.navbar-brand{
+	white-space: inherit;
+}
+header{
+	padding-top: 70px;
+	background-image: url(../../assets/img/steven-wang-416400.jpg);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+form.ml-auto{
+	margin-bottom: 20px;
+}
+@media (min-width: 1250px){
+	header{
+		padding-top: 100px;
+		height: 100vh;
+	}
+	header.masthead .masthead-img {
+	    max-width: 400px;
+	    max-height: 400px;
+	    float: left;
+	}
+	#cadastro{
+		width: 600px;
+	}
+}
