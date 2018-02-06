@@ -4,61 +4,59 @@
       <div class="col-12 my-auto text-white">
         <img class="masthead-img img-fluid mb-3" src="../assets/img/logo-tarsus-texto-cara.png" alt="">
         <form #heroForm="ngForm" class="ml-auto" id="cadastro">
-            <div [hidden]="heroForm.submitted">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" class="form-control" minlength="3" [(ngModel)]="pessoa.name" #name="ngModel" required>
-                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-                  <div *ngIf="name.errors.required">
-                    Este campo deve ser preenchido.
-                  </div>
-                  <div *ngIf="name.errors.minlength">
-                    O nome deve ter no minimo 3 letras.
-                  </div>        
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" name="name" class="form-control" minlength="3" [(ngModel)]="pessoa.name" #name="ngModel" required>
+              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                <div *ngIf="name.errors.required">
+                  Este campo deve ser preenchido.
                 </div>
-                <label for="email">Email</label>
-                <input type="text" name="email" class="form-control" [(ngModel)]="pessoa.email" #email="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-                  <div *ngIf="email.errors.required">
-                    Este campo deve ser preenchido.
-                  </div>
-                  <div  *ngIf="email.errors && email.errors.pattern">
-                      Email is invalid
-                  </div>      
-                </div>
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" class="form-control" minlength="8" [(ngModel)]="pessoa.senha" #senha="ngModel" required>
-                <div *ngIf="senha.invalid && (senha.dirty || senha.touched)" class="alert alert-danger">
-                  <div *ngIf="senha.errors.required">
-                    Este campo deve ser preenchido.
-                  </div> 
-                  <div *ngIf="senha.errors.minlength">
-                      A senha deve ter no minimo 8 letras.
-                  </div>      
-                </div>
-                <label for="confirmaSenha">Confirmar Senha</label>
-                <input type="password" name="confirmaSenha" class="form-control" [(ngModel)]="pessoa.confirmaSenha" #confirmaSenha="ngModel" required>
-                <div *ngIf="(confirmaSenha.invalid && senha.value == confirmaSenha.value) && (confirmaSenha.dirty || confirmaSenha.touched)" class="alert alert-danger">
-                  <div *ngIf="confirmaSenha.errors.required">
-                    Este campo deve ser preenchido.
-                  </div>    
-                </div>
-                <div *ngIf="(senha.value != confirmaSenha.value && !confirmaSenha.invalid) && (confirmaSenha.dirty || confirmaSenha.touched)" class="alert alert-danger">
-                  <div>
-                    As senha estão diferentes.
-                  </div>    
-                </div>
-                <label for="sexo">Sexo</label><br>
-                <div class="center-on-page">
-                  <input ng-control="options" type="radio" name="sexo" id="rb1" value="F" [(ngModel)]="pessoa.sexo" required/>
-                  <label for="rb1" class="radio">Feminino</label>
-                  <input ng-control="options" type="radio" name="sexo" id="rb2" value="M" [(ngModel)]="pessoa.sexo" required/>
-                  <label for="rb2" class="radio">Masculino</label>
-                </div>
+                <div *ngIf="name.errors.minlength">
+                  O nome deve ter no minimo 3 letras.
+                </div>        
               </div>
-              <button [disabled]="heroForm.invalid" type="button" class="btn btn-primary" (click)="cadastrar()">Cadastrar</button>
+              <label for="email">E-mail</label>
+              <input type="text" name="email" class="form-control" [(ngModel)]="pessoa.email" #email="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                <div *ngIf="email.errors.required">
+                  Este campo deve ser preenchido.
+                </div>
+                <div  *ngIf="email.errors && email.errors.pattern">
+                    e-mail invalido
+                </div>      
+              </div>
+              <label for="senha">Senha</label>
+              <input type="password" name="senha" class="form-control" minlength="8" [(ngModel)]="pessoa.senha" #senha="ngModel" required>
+              <div *ngIf="senha.invalid && (senha.dirty || senha.touched)" class="alert alert-danger">
+                <div *ngIf="senha.errors.required">
+                  Este campo deve ser preenchido.
+                </div> 
+                <div *ngIf="senha.errors.minlength">
+                    A senha deve ter no minimo 8 letras.
+                </div>      
+              </div>
+              <label for="confirmaSenha">Confirmar Senha</label>
+              <input type="password" name="confirmaSenha" class="form-control" [(ngModel)]="pessoa.confirmaSenha" #confirmaSenha="ngModel" required>
+              <div *ngIf="(confirmaSenha.invalid && senha.value == confirmaSenha.value) && (confirmaSenha.dirty || confirmaSenha.touched)" class="alert alert-danger">
+                <div *ngIf="confirmaSenha.errors.required">
+                  Este campo deve ser preenchido.
+                </div>    
+              </div>
+              <div *ngIf="(senha.value != confirmaSenha.value && !confirmaSenha.invalid) && (confirmaSenha.dirty || confirmaSenha.touched)" class="alert alert-danger">
+                <div>
+                  As senha estão diferentes.
+                </div>    
+              </div>
+              <label for="sexo">Sexo</label><br>
+              <div class="center-on-page">
+                <input ng-control="options" type="radio" name="sexo" id="rb1" value="F" [(ngModel)]="pessoa.sexo" required/>
+                <label for="rb1" class="radio">Feminino</label>
+                <input ng-control="options" type="radio" name="sexo" id="rb2" value="M" [(ngModel)]="pessoa.sexo" required/>
+                <label for="rb2" class="radio">Masculino</label>
+              </div>
             </div>
-          </form>
+          <button [disabled]="heroForm.invalid" type="button" class="btn btn-primary" (click)="cadastrar()">Cadastrar</button>
+        </form>
       </div>
     </div>
   </div>
