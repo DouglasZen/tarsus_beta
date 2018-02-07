@@ -8,32 +8,25 @@
       <span class="">Login</span>
     </button>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <form class="ml-auto">
-        <ul class="navbar-nav ml-auto text-white">
-          <li class="nav-item">
-              <a class="navbar-brand">Login</a>
-          </li>
-          <li class="nav-item">
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          </li>
-          <li class="nav-item">
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </li>
-          <li class="nav-item">
-              <button type="button" class="btn btn-primary">Entrar</button>
-          </li>
-        </ul>
-      </form>
-      <!--<form #heroForm="ngForm" class="ml-auto" id="cadastro">
+      <form #heroForm="ngForm" class="ml-auto">
         <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="text" name="email" class="form-control" [(ngModel)]="login.email" #email="ngModel" required>
-            <label for="senha">Senha</label>
-            <input type="password" name="senha" class="form-control" minlength="8" [(ngModel)]="login.senha" #senha="ngModel" required>
-          </div>
-        <button [disabled]="heroForm.invalid" type="button" class="btn btn-primary" (click)="cadastrar()">Cadastrar</button>
-      </form>-->
-    </div>
+          <ul class="navbar-nav ml-auto text-white">
+            <li class="nav-item">
+              <a class="navbar-brand">Login</a>
+            </li>
+            <li class="nav-item">
+              <input type="text" name="email" class="form-control" [(ngModel)]="login.email" #email="ngModel" required placeholder="Enter email">
+            </li>
+            <li class="nav-item">
+              <input type="password" name="senha" class="form-control" [(ngModel)]="login.senha" #senha="ngModel" required placeholder="Password">
+            </li>
+            <li class="nav-item">
+              <button [disabled]="heroForm.invalid" type="button" class="btn btn-primary" (click)="entrar()">Entrar</button>
+            </li>
+        </ul>
+      </div>
+    </form>
+  </div>
   </div>
 </nav>
 <!--<a routerLink="/cadastro-component" routerLinkActive="active">Crisis Center</a>>-->

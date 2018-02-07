@@ -17,4 +17,8 @@ export class NavbarComponent {
   ngOnInit() {
     this.router.navigate(['/cadastro']);
   }
+
+  public entrar(){
+    console.log(this.login);
+  }
 }
