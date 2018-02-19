@@ -15,6 +15,6 @@ export class NavbarComponent {
   }
 
   ngOnInit() {
-    this.router.navigate(['/cadastro']);
+    this.router.navigate(['/local']);
   }
 }
