@@ -22,7 +22,10 @@ form{
 #buscar{
 	margin-top: 30px;
 }
-
+.list-group-item{
+	background-color: #5bc0de;
+	color: white;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -70,8 +73,10 @@ form{
 	}
 	div.scroll {
 		overflow: auto;
-		background-color: #ccc;
 		max-height: 30em;
+	}
+	.busca{
+		margin-top: 100px;
 	}
 }
 

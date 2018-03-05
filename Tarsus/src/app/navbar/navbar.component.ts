@@ -15,10 +15,11 @@ export class NavbarComponent {
   }
 
   ngOnInit() {
-    this.router.navigate(['/local']);
+    this.router.navigate(['/avaliacao']);
   }
 
   public entrar(){
+    this.router.navigate(['/local']);
     console.log(this.login);
   }
 }

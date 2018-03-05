@@ -1,42 +1,8 @@
-header{
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-	height: 100vh;
-}
-h3{
-	text-align: center;
-}
+
 .col-12{
 	border-radius: 10px;
 	background-color:white;
 	padding: 20px;
-}
-img.preenchimento{
-	width: 73px;
-	margin-left: 15px;
-}
-img.branca{
-	width: 80px;
-	height: 290px;
-	vertical-align: top;
-	margin-left: -80px;
-}
-img.silhueta{
-	width: 90px;
-	cursor: pointer;
-	margin-left: -90px;
-}
-.hashtags{
-	position: absolute;
-	margin-top: -340px;
-	margin-left: 59%;
-}
-p.hashtag{
-	margin-bottom: 8px;
-}
-.btn-success{
-	margin-top: 15px
 }
 .estrelas input[type=radio] {
   display: none;
@@ -51,26 +17,9 @@ p.hashtag{
 .estrelas label {
 	font-size: 3em;
 }
-.opacityTrue {
-    animation-name: animateTrue;
-    animation-duration: 0.7s;
-    animation-fill-mode: forwards;
+.row{
+	margin-top: 50px;
 }
-.opacityFalse {
-    animation-name: animateFalse;
-    animation-duration: 0.7s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes animateTrue {
-    from  {opacity: 0.0;}
-    to  {opacity: 1;}
-}
-@keyframes animateFalse {
-    from  {opacity: 1;}
-    to  {opacity: 0.0;}
-}
-
 @media (min-width: 1250px){
 	header{
 		background: #00FFFF;
@@ -83,32 +32,5 @@ p.hashtag{
 	    background-position: center;
 	    background-size: cover;
 		height: 100vh;
-	}
-	.navbar-toggleable-md .navbar-toggler{
-		display: block;
-		position: fixed;
-	}
-	img.preenchimento{
-		width: 101px;
-		margin-left: 15px;
-	}
-	img.branca{
-		width: 100px;
-		height: 400px;
-		vertical-align: top;
-		margin-left: -104px;
-	}
-	img.silhueta{
-		width: 126px;
-		margin-left: -118px;
-	}
-	.hashtags{
-		position: absolute;
-		margin-top: -470px;
-		margin-left: 54%;
-	}
-	p.hashtag{
-		margin-bottom: 21px;
-		opacity:0;
 	}
 }
