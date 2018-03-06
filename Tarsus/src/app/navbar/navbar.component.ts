@@ -15,7 +15,6 @@ export class NavbarComponent {
   }
 
   ngOnInit() {
-    this.router.navigate(['/avaliacao']);
   }
 
   public entrar(){

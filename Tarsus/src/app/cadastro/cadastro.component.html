@@ -6,7 +6,7 @@
         <form #heroForm="ngForm" class="ml-auto" id="cadastro">
             <div class="form-group">
               <label for="name">Nome</label>
-              <input type="text" name="name" class="form-control" minlength="3" [(ngModel)]="pessoa.name" #name="ngModel" required>
+              <input type="text" name="name" class="form-control" minlength="3" [(ngModel)]="pessoa.nome" #name="ngModel" required>
               <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
                 <div *ngIf="name.errors.required">
                   Este campo deve ser preenchido.
@@ -36,7 +36,7 @@
                 </div>      
               </div>
               <label for="confirmaSenha">Confirmar Senha</label>
-              <input type="password" name="confirmaSenha" class="form-control" [(ngModel)]="pessoa.confirmaSenha" #confirmaSenha="ngModel" required>
+              <input type="password" name="confirmaSenha" class="form-control" [(ngModel)]="confimaPassword" #confirmaSenha="ngModel" required>
               <div *ngIf="(confirmaSenha.invalid && senha.value == confirmaSenha.value) && (confirmaSenha.dirty || confirmaSenha.touched)" class="alert alert-danger">
                 <div *ngIf="confirmaSenha.errors.required">
                   Este campo deve ser preenchido.

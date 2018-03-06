@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Pessoa } from '../model/Pessoa';
+import { UsuarioService } from '../usuario.service'
+
 
 @Component({
   selector: 'app-root',
@@ -10,11 +12,15 @@ import { Pessoa } from '../model/Pessoa';
 export class CadastroComponent {
   private pessoa: Pessoa;
   private confimaPassword: String;
-  constructor() {
+  constructor(
+    private usuarioService : UsuarioService
+  ) {
     this.pessoa = new Pessoa();
   }
 
-  public cadastrar(){
-    console.log(this.pessoa);
+  public cadastrar(): void{
+    this.usuarioService.cadastrar(this.pessoa).subscribe(res =>{
+      console.log(res);
+    });
   }
 }

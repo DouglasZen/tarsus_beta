@@ -2,7 +2,10 @@ import { BrowserModule }        from '@angular/platform-browser';
 import { NgModule }             from '@angular/core';
 import { FormsModule }          from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule }    from '@angular/common/http';
 
+
+import { UsuarioService } from './usuario.service';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -10,13 +13,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LocalComponent } from './local/local.component';
 import { ListaLocaisComponent } from './lista-locais/lista-locais.component';
 import { AvaliacaoComponent } from './avaliacao/avaliacao.component';
+import { AppRoutingModule } from './/app-routing.module';
 
-const appRoutes: Routes = [
-  { path: 'cadastro', component: CadastroComponent },
-  { path: 'local', component: LocalComponent },
-  { path: 'lista_locais', component: ListaLocaisComponent },
-  { path: 'avaliacao', component: AvaliacaoComponent }
-];
+
+
 
 @NgModule({
   declarations: [
@@ -30,12 +30,10 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UsuarioService],
   bootstrap: [NavbarComponent]
 })
 export class AppModule { }
