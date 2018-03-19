@@ -115,17 +115,9 @@
 }
 /*-------------------------------------*/
 @media (min-width: 1250px){
-	header{
-		background: #00FFFF;
-		background: -webkit-linear-gradient(#00FFFF, black);
-		background: -o-linear-gradient(#00FFFF, black);
-		background: -moz-linear-gradient(#00FFFF, black);
-		background: linear-gradient(#00FFFF, black);
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-position: center;
-		background-size: cover;
-		height: 100vh;
+	.container{
+		width: inherit;
+		margin-top: 6em;
 	}
 	.card-header.imagem{
 		height: 20em;
