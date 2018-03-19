@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UriSettings } from '../config/uri';
+import { Locais } from '../model/locais';
 
 @Component({
   selector: 'app-local',
@@ -6,10 +10,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./local.component.css']
 })
 export class LocalComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  locais : Locais;
+  
+  location = {};
+  setPosition(position){
+    this.location = position.coords;
+    this.listarLocais();
   }
 
+  constructor(
+    private http: HttpClient,
+    private router : Router
+  ) { }
+
+  ngOnInit() {
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
+    }
+    
+  }
+
+  public listarLocais(){
+    let coord = this.location["latitude"] + ',' + this.location["longitude"];
+    console.log(coord);
+    this.http.get(UriSettings.URI + 'locais/' + coord)
+             .subscribe(
+               data => {
+                 this.locais = data['results']; 
+               });
+  }
 }

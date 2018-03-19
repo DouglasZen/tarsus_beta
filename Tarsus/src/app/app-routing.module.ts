@@ -14,12 +14,12 @@ const appRoutes: Routes = [
   { path: 'lista_locais', component: ListaLocaisComponent },
   { path: 'avaliacao', component: AvaliacaoComponent },
   { path: 'index', component: NavbarComponent},
-  { path: '', redirectTo: '/index', pathMatch: 'full' },
+  { path: '', redirectTo: '/cadastro', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {useHash: true})
   ],
   exports: [ RouterModule]
 })
