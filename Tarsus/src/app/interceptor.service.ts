@@ -30,7 +30,7 @@ export class InterceptorService implements HttpInterceptor{
       });
       return next.handle(cloneReq)
                  .do((evento: HttpEvent<any>) =>{
-                    console.log(evento) ;
+                    console.log(evento);
                  })
                  .catch(resposta => {
                     if(resposta instanceof HttpErrorResponse){
@@ -47,8 +47,12 @@ export class InterceptorService implements HttpInterceptor{
                  .do((evento: HttpEvent<any>) => {
                     if(evento instanceof HttpResponse){
                       if(evento.body){
+                        console.log(evento.body);
                         token = evento.body['token'];
                         localStorage.setItem("currentUser", token);  
+                        localStorage.setItem("nome", evento.body["nome"]);
+                        localStorage.setItem("email", evento.body["email"]);
+                        localStorage.setItem("sexo", evento.body["sexo"]);
                       }
                     }   
                  }).catch(resposta => {

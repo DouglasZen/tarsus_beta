@@ -11,7 +11,7 @@ import { Locais } from '../model/locais';
 })
 export class LocalComponent implements OnInit {
   locais : Locais;
-  
+  coordenada : string;
   location = {};
   setPosition(position){
     this.location = position.coords;
@@ -31,6 +31,7 @@ export class LocalComponent implements OnInit {
   }
 
   public listarLocais(){
+    this.coordenada =this.location["latitude"] + ',' + this.location["longitude"]; 
     let coord = this.location["latitude"] + ',' + this.location["longitude"];
     console.log(coord);
     this.http.get(UriSettings.URI + 'locais/' + coord)
