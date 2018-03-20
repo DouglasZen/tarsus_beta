@@ -13,6 +13,7 @@ import { Erro } from '../model/erro';
 })
 export class NavbarComponent {
   login: Login;
+  logado: Boolean;
 
   
   constructor(
@@ -22,6 +23,15 @@ export class NavbarComponent {
   }
 
   ngOnInit() {
+    let token = localStorage.getItem("currentUser");
+    if(token){
+      this.logado = true;
+      console.log(this.logado);
+    } else{
+      this.logado = false;
+      console.log(this.logado);
+    }
+
   }
 
   public entrar(): void{
