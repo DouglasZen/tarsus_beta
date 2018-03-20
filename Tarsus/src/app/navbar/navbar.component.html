@@ -4,10 +4,10 @@
       <img src="../assets/img/logo-tarsus-cara.png" width="60" class="d-inline-block align-top" alt="">
       Tarsus
     </a>
-    <button *ngIf="logado == false" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <button *ngIf="usuarioService.islogado == false" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="">Login</span>
     </button>
-    <div *ngIf="logado == false" class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <div *ngIf="usuarioService.islogado == false" class="collapse navbar-collapse" id="navbarsExampleDefault">
       <form #heroForm="ngForm" class="ml-auto">
         <div class="form-group">
           <ul class="navbar-nav ml-auto text-white">
@@ -27,7 +27,7 @@
         </div>
       </form>
     </div>
-  <div *ngIf="logado == true">
+  <div *ngIf="usuarioService.islogado == true">
     <span class="navbar-text" style="float: right;">Olá {{localStorage.getItem('nome')}}</span>
   </div>
   </div>
