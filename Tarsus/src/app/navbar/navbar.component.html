@@ -1,5 +1,5 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top" id="mainNav">
-  <div class="container">
+  <div class="container text-center">
     <a class="navbar-brand" href="#">
       <img src="../assets/img/logo-tarsus-cara.png" width="60" class="d-inline-block align-top" alt="">
       Tarsus
@@ -9,27 +9,23 @@
     </button>
     <div *ngIf="usuarioService.islogado == false" class="collapse navbar-collapse" id="navbarsExampleDefault">
       <form #heroForm="ngForm" class="ml-auto">
-        <div class="form-group">
-          <ul class="navbar-nav ml-auto text-white">
-            <li class="nav-item">
-              <a class="navbar-brand">Login</a>
-            </li>
-            <li class="nav-item">
-              <input type="text" name="email" class="form-control" [(ngModel)]="login.email" #email="ngModel" required placeholder="Enter email">
-            </li>
-            <li class="nav-item">
-              <input type="password" name="senha" class="form-control" [(ngModel)]="login.senha" #senha="ngModel" required placeholder="Password">
-            </li>
-            <li class="nav-item">
-              <button [disabled]="heroForm.invalid" type="button" class="btn btn-primary" (click)="entrar()">Entrar</button>
-            </li>
-          </ul>
-        </div>
+        <ul class="navbar-nav ml-auto text-white">
+          <li class="nav-item">
+            <a class="navbar-brand">Login</a>
+          </li>
+          <li class="nav-item">
+            <input type="text" name="email" class="form-control" [(ngModel)]="login.email" #email="ngModel" required placeholder="Enter email">
+          </li>
+          <li class="nav-item">
+            <input type="password" name="senha" class="form-control" [(ngModel)]="login.senha" #senha="ngModel" required placeholder="Password">
+          </li>
+          <li class="nav-item">
+            <button [disabled]="heroForm.invalid" type="button" class="btn btn-primary" (click)="entrar()">Entrar</button>
+          </li>
+        </ul>
       </form>
     </div>
-  <div *ngIf="usuarioService.islogado == true">
-    <span class="navbar-text" style="float: right;">Olá {{usuarioService.usuario.nome}} </span>
-  </div>
+    Olá
   </div>
 </nav>
 <!--<a routerLink="/cadastro-component" routerLinkActive="active">Crisis Center</a>>-->
