@@ -12,12 +12,13 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import { Router } from '@angular/router';
+import { UsuarioService } from './usuario.service'
 
 
 @Injectable()
 export class InterceptorService implements HttpInterceptor{
   
-  constructor( private router : Router) { }
+  constructor( private router : Router, public usuarioService : UsuarioService) { }
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
@@ -31,6 +32,7 @@ export class InterceptorService implements HttpInterceptor{
       return next.handle(cloneReq)
                  .do((evento: HttpEvent<any>) =>{
                     console.log(evento);
+                    this.usuarioService.islogado = true;
                  })
                  .catch(resposta => {
                     if(resposta instanceof HttpErrorResponse){
@@ -49,6 +51,7 @@ export class InterceptorService implements HttpInterceptor{
                       if(evento.body){
                         console.log(evento.body);
                         token = evento.body['token'];
+                        this.usuarioService.islogado = true;
                         localStorage.setItem("currentUser", token);  
                         localStorage.setItem("nome", evento.body["nome"]);
                         localStorage.setItem("email", evento.body["email"]);

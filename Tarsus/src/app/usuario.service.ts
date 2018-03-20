@@ -23,18 +23,14 @@ export class UsuarioService {
   public url = UriSettings.URI;
   private token: Token;
   private erro : Erro;
-  private islogin: boolean;
+  public islogado: boolean;
   constructor(
     private http: HttpClient,
     private router : Router
-  ) { 
-    this.islogin = true;
-  }
+  ) {this.islogado = false}
 
   
-  
   entrar(login : Login){
-    this.islogin = false;
     this.http.post<Token>(this.url + 'login/', login)
       .subscribe(
         token => {

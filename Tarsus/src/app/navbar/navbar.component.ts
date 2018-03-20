@@ -23,15 +23,8 @@ export class NavbarComponent {
   }
 
   ngOnInit() {
-    /*let token = localStorage.getItem("currentUser");
-    if(token){
-      this.logado = true;
-      console.log(this.logado);
-    } else{
-      this.logado = false;
-      console.log(this.logado);
-    }*/
-
+    let token = localStorage.getItem("currentUser");
+    console.log('nav  ' + this.usuarioService.islogado);
   }
 
   public entrar(): void{
