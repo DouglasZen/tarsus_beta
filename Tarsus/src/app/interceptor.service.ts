@@ -13,26 +13,29 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import { Router } from '@angular/router';
 import { UsuarioService } from './usuario.service'
-
+import { Token } from './model/token';
 
 @Injectable()
 export class InterceptorService implements HttpInterceptor{
-  
-  constructor( private router : Router, public usuarioService : UsuarioService) { }
+  token : Token;
+  constructor( private router : Router, 
+               public usuarioService : UsuarioService) {}
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>>{
-    let token = localStorage.getItem("currentUser");
+    
+    let usuario = localStorage.getItem("currentUser");
     let codErro;
-    if(token){
+    if(usuario){
+      this.token = JSON.parse(usuario);
       const cloneReq = request.clone({
-        headers: request.headers.set('Authorization', token)
+        headers: request.headers.set('Authorization', this.token.token)
       });
       return next.handle(cloneReq)
                  .do((evento: HttpEvent<any>) =>{
-                    console.log(evento);
                     this.usuarioService.islogado = true;
+                    this.usuarioService.usuario = JSON.parse(usuario);
                  })
                  .catch(resposta => {
                     if(resposta instanceof HttpErrorResponse){
@@ -49,13 +52,10 @@ export class InterceptorService implements HttpInterceptor{
                  .do((evento: HttpEvent<any>) => {
                     if(evento instanceof HttpResponse){
                       if(evento.body){
-                        console.log(evento.body);
-                        token = evento.body['token'];
+                        usuario = JSON.stringify(evento.body);
                         this.usuarioService.islogado = true;
-                        localStorage.setItem("currentUser", token);  
-                        localStorage.setItem("nome", evento.body["nome"]);
-                        localStorage.setItem("email", evento.body["email"]);
-                        localStorage.setItem("sexo", evento.body["sexo"]);
+                        this.usuarioService.usuario = JSON.parse(usuario);
+                        localStorage.setItem("currentUser", usuario);  
                       }
                     }   
                  }).catch(resposta => {

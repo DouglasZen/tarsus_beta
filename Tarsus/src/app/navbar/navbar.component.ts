@@ -14,17 +14,16 @@ import { Erro } from '../model/erro';
 export class NavbarComponent {
   login: Login;
   logado: Boolean;
-
+  
   
   constructor(
     public usuarioService : UsuarioService
   ) {
     this.login = new Login();
+   
   }
 
   ngOnInit() {
-    let token = localStorage.getItem("currentUser");
-    console.log('nav  ' + this.usuarioService.islogado);
   }
 
   public entrar(): void{
