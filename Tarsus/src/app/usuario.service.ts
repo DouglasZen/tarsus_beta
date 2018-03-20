@@ -27,10 +27,14 @@ export class UsuarioService {
   constructor(
     private http: HttpClient,
     private router : Router
-  ) { }
+  ) { 
+    this.islogin = true;
+  }
 
   
+  
   entrar(login : Login){
+    this.islogin = false;
     this.http.post<Token>(this.url + 'login/', login)
       .subscribe(
         token => {

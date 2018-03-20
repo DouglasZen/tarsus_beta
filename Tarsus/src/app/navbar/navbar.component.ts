@@ -17,20 +17,20 @@ export class NavbarComponent {
 
   
   constructor(
-    private usuarioService : UsuarioService
+    public usuarioService : UsuarioService
   ) {
     this.login = new Login();
   }
 
   ngOnInit() {
-    let token = localStorage.getItem("currentUser");
+    /*let token = localStorage.getItem("currentUser");
     if(token){
       this.logado = true;
       console.log(this.logado);
     } else{
       this.logado = false;
       console.log(this.logado);
-    }
+    }*/
 
   }
 
