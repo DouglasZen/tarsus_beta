@@ -25,7 +25,9 @@
         </ul>
       </form>
     </div>
-    Olá
+    <div *ngIf="usuarioService.islogado == true">
+      Olá {{usuarioService.usuario.nome}} 
+  </div>
   </div>
 </nav>
 <!--<a routerLink="/cadastro-component" routerLinkActive="active">Crisis Center</a>>-->
