@@ -26,3 +26,16 @@ form.ml-auto{
 		background: rgba(56,176,222, 0.7);
 	}
 }
+
+.usuario-menu{
+	position: absolute;
+	right: 1em;
+	top: 1em;
+	text-align: right;
+}
+
+@media (min-width: 992px){
+	.usuario-menu{
+		top: inherit;
+	}
+}
