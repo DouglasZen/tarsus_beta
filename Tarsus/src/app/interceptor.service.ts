@@ -43,6 +43,7 @@ export class InterceptorService implements HttpInterceptor{
                       if(codErro == 401){
                         this.router.navigate(["cadastro"]);
                         localStorage.clear();
+                        this.usuarioService.islogado = false;
                       }
                     }
                     return Observable.throw(resposta);
@@ -64,6 +65,7 @@ export class InterceptorService implements HttpInterceptor{
                       if(codErro == 401){
                         this.router.navigate(["cadastro"]);
                         localStorage.clear();
+                        this.usuarioService.islogado = false;
                       }
                     }
                     return Observable.throw(resposta);

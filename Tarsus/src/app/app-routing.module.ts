@@ -12,7 +12,7 @@ const appRoutes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
   { path: 'local', component: LocalComponent },
   { path: 'lista_locais', component: ListaLocaisComponent },
-  { path: 'avaliacao', component: AvaliacaoComponent },
+  { path: 'avaliacao/:codigo/:nome', component: AvaliacaoComponent},
   { path: 'index', component: NavbarComponent},
   { path: '', redirectTo: '/cadastro', pathMatch: 'full' },
 ];

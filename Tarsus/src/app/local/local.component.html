@@ -13,12 +13,16 @@
         <br>
         <br>
         <h3>Você está em algum desses lugares?</h3>
-        <!--<h3>{{coordenada}}</h3>-->
+        <h3 style="display:none">{{coordenada}}}</h3>
         <form class="ml-auto">
           <div class="scroll">
             <div class="list-group">
               <div class="form-check local" *ngFor="let local of locais">
-                <button type="button" class="btn btn-lg list-group-item list-group-item-action justify-content-between btn btn-info btn-lg btn-block">{{ local.name }}<span class="badge badge-default badge-pill">Nota 5</span></button>
+                <button type="button" class="btn btn-lg list-group-item list-group-item-action justify-content-between btn btn-info btn-lg btn-block"
+                        [routerLink]="['/avaliacao' , local.id, local.name]">{{ local.name }}
+                  <span class="badge badge-default badge-pill">Nota 5</span>
+                  
+                </button>
               </div>
             </div>
           </div>

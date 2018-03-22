@@ -33,6 +33,7 @@ export class LocalComponent implements OnInit {
   public listarLocais(){
     this.coordenada =this.location["latitude"] + ',' + this.location["longitude"]; 
     let coord = this.location["latitude"] + ',' + this.location["longitude"];
+    console.log(coord);
     this.http.get(UriSettings.URI + 'locais/' + coord)
              .subscribe(
                data => {
