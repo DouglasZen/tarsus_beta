@@ -28,18 +28,33 @@
     <div *ngIf="usuarioService.islogado == true" class="usuario-menu">
       <ul class="nav navbar-nav navbar-right list-inline">
         <li class="dropdown">
-          <a class="dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer">
             Olá {{usuarioService.usuario.nome}}
           </a>
           <div class="dropdown-menu pull-left" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" (click)="showModal()">Something else here</a>
           </div>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header {{mensagem.classType}}">
+      <h3>{{mensagem.tipo}}</h3>
+      <span class="close" (click)="closeModal()">&times;</span>
+    </div>
+    <div class="modal-body">
+      <p>{{mensagem.texto}}</p>
+    </div>
+    <div class="modal-footer {{mensagem.classType}}">
+    </div>
+  </div>
+</div>
 <!--<a routerLink="/cadastro-component" routerLinkActive="active">Crisis Center</a>>-->
 <router-outlet></router-outlet>
