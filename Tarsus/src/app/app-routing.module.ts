@@ -7,11 +7,13 @@ import { LocalComponent } from './local/local.component';
 import { ListaLocaisComponent } from './lista-locais/lista-locais.component';
 import { AvaliacaoComponent } from './avaliacao/avaliacao.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 const appRoutes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
   { path: 'local', component: LocalComponent },
   { path: 'lista_locais', component: ListaLocaisComponent },
+  { path: 'perfil', component: PerfilComponent },
   { path: 'avaliacao/:codigo/:nome', component: AvaliacaoComponent},
   { path: 'index', component: NavbarComponent},
   { path: '', redirectTo: '/cadastro', pathMatch: 'full' },

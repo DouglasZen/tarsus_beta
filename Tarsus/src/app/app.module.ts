@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LocalComponent } from './local/local.component';
 import { ListaLocaisComponent } from './lista-locais/lista-locais.component';
 import { AvaliacaoComponent } from './avaliacao/avaliacao.component';
+import { PerfilComponent } from './perfil/perfil.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { InterceptorService } from './interceptor.service';
 
@@ -26,7 +27,8 @@ import { InterceptorService } from './interceptor.service';
     CadastroComponent,
     LocalComponent,
     ListaLocaisComponent,
-    AvaliacaoComponent
+    AvaliacaoComponent,
+    PerfilComponent
   ],
   imports: [
     ReactiveFormsModule,
